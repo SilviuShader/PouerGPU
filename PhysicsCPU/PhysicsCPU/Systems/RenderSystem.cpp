@@ -12,7 +12,7 @@ namespace PhysicsCPU::Systems
 {
 	void RenderSystem::RenderColliders(registry& registry)
 	{
-		Camera camera = { 0 };
+		Camera camera;
 
 		camera.position   = Vector3{ 10.0f, 10.0f, 10.0f };
 		camera.target     = Vector3{ 0.0f, 0.0f, 0.0f };   

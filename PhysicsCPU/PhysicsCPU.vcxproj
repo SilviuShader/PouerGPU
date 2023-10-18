@@ -132,13 +132,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PhysicsCPU\Components\RigidbodyComponent.cpp" />
     <ClCompile Include="PhysicsCPU\Components\SphereColliderComponent.cpp" />
     <ClCompile Include="PhysicsCPU\Core\EntityComponentSystem.cpp" />
+    <ClCompile Include="PhysicsCPU\Systems\PhysicsSystem.cpp" />
     <ClCompile Include="PhysicsCPU\Systems\RenderSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PhysicsCPU\Components\RigidbodyComponent.h" />
     <ClInclude Include="PhysicsCPU\Components\SphereColliderComponent.h" />
     <ClInclude Include="PhysicsCPU\Core\EntityComponentSystem.h" />
+    <ClInclude Include="PhysicsCPU\Systems\PhysicsSystem.h" />
     <ClInclude Include="PhysicsCPU\Systems\RenderSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

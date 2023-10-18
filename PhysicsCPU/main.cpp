@@ -3,6 +3,8 @@
 #include "PhysicsCPU/Core/EntityComponentSystem.h"
 
 #include "PhysicsCPU/Components/SphereColliderComponent.h"
+#include "PhysicsCPU/Components/RigidbodyComponent.h"
+#include "PhysicsCPU/Systems/PhysicsSystem.h"
 
 #include "PhysicsCPU/Systems/RenderSystem.h"
 
@@ -21,11 +23,15 @@ int main()
 	registry registry;
 
 	const auto testSphere = EntityComponentSystem::CreateEntity(registry);
-	registry.emplace<SphereColliderComponent>(testSphere);
+	registry.emplace<SphereColliderComponent>(testSphere, SphereColliderComponent());
+	registry.emplace<RigidbodyComponent>(testSphere, RigidbodyComponent());
 
 	while (!WindowShouldClose())
 	{
 		PollInputEvents();
+
+		const auto deltaTime = GetFrameTime();
+		PhysicsSystem::UpdatePhysics(registry, deltaTime);
 
 		BeginDrawing();
 
