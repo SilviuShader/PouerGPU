@@ -36,7 +36,7 @@ namespace PhysicsCPU::Systems
 
 		BeginMode3D(camera);
 
-		planeCollidersView.each([](const Transform& transform, const PlaneColliderComponent& planeCollider)
+		planeCollidersView.each([](const auto& transform, const auto& planeCollider)
 		{
 			const Vector3    defaultPlaneUp = { 0.0f, 1.0f, 0.0f };
 			const Vector3    planeUp        = Vector3Normalize(Vector3CrossProduct(planeCollider.planeUDirection, planeCollider.planeVDirection));

@@ -5,6 +5,7 @@
 #include "PhysicsCPU/Components/SphereColliderComponent.h"
 #include "PhysicsCPU/Components/RigidbodyComponent.h"
 #include "PhysicsCPU/Components/PlaneColliderComponent.h"
+#include "PhysicsCPU/Systems/CollisionSystem.h"
 
 #include "PhysicsCPU/Systems/PhysicsSystem.h"
 #include "PhysicsCPU/Systems/RenderSystem.h"
@@ -43,6 +44,7 @@ int main()
 		PollInputEvents();
 
 		const auto deltaTime = GetFrameTime();
+		CollisionSystem::EvaluateCollisions(registry);
 		PhysicsSystem::UpdatePhysics(registry, deltaTime);
 
 		BeginDrawing();

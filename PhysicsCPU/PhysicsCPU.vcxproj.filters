@@ -36,6 +36,9 @@
     <ClCompile Include="PhysicsCPU\Components\PlaneColliderComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PhysicsCPU\Systems\CollisionSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PhysicsCPU\Core\EntityComponentSystem.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsCPU\Components\PlaneColliderComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsCPU\Systems\CollisionSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
