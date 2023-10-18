@@ -26,6 +26,7 @@ namespace PhysicsCPU::Systems
 		auto planeCollidersView  = registry.view<const Transform, const PlaneColliderComponent>();
 		auto sphereCollidersView = registry.view<const Transform, const SphereColliderComponent>();
 
+		// TODO: Rotate camera and add illumination
 		Camera camera;
 
 		camera.position   = Vector3{ 10.0f, 10.0f, 10.0f };
