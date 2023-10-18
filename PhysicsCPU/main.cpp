@@ -4,8 +4,9 @@
 
 #include "PhysicsCPU/Components/SphereColliderComponent.h"
 #include "PhysicsCPU/Components/RigidbodyComponent.h"
-#include "PhysicsCPU/Systems/PhysicsSystem.h"
+#include "PhysicsCPU/Components/PlaneColliderComponent.h"
 
+#include "PhysicsCPU/Systems/PhysicsSystem.h"
 #include "PhysicsCPU/Systems/RenderSystem.h"
 
 using namespace entt;
@@ -26,6 +27,17 @@ int main()
 	registry.emplace<SphereColliderComponent>(testSphere, SphereColliderComponent());
 	registry.emplace<RigidbodyComponent>(testSphere, RigidbodyComponent());
 
+	auto planeRigidbody = RigidbodyComponent();
+	planeRigidbody.isKinematic = true;
+
+	const auto bottomPlane = EntityComponentSystem::CreateEntity(registry);
+	registry.emplace<PlaneColliderComponent>(bottomPlane, PlaneColliderComponent());
+	registry.emplace<RigidbodyComponent>(bottomPlane, planeRigidbody);
+	auto& bottomPlaneTransform = registry.get<Transform>(bottomPlane);
+	bottomPlaneTransform.translation.y = -5.0f;
+
+	RenderSystem::InitializeResources();
+
 	while (!WindowShouldClose())
 	{
 		PollInputEvents();
@@ -42,6 +54,8 @@ int main()
 
 		EndDrawing();
 	}
+
+	RenderSystem::FreeResources();
 	
 	CloseWindow();
 

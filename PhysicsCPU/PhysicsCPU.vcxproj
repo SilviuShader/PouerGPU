@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PhysicsCPU\Components\PlaneColliderComponent.cpp" />
     <ClCompile Include="PhysicsCPU\Components\RigidbodyComponent.cpp" />
     <ClCompile Include="PhysicsCPU\Components\SphereColliderComponent.cpp" />
     <ClCompile Include="PhysicsCPU\Core\EntityComponentSystem.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="PhysicsCPU\Systems\RenderSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PhysicsCPU\Components\PlaneColliderComponent.h" />
     <ClInclude Include="PhysicsCPU\Components\RigidbodyComponent.h" />
     <ClInclude Include="PhysicsCPU\Components\SphereColliderComponent.h" />
     <ClInclude Include="PhysicsCPU\Core\EntityComponentSystem.h" />
